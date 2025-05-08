@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Áurea Suites - Nosotros</title>
+  <!-- CDN de Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="font-sans background-main text-primary">
+
+  <header class="background-main shadow fixed w-full z-50">
+    <nav class="container mx-auto flex justify-between items-center p-4 relative">
+      <a href="index.html" class="text-2xl font-bold primary-color">Áurea Suites</a>
+      <button id="menu-btn" class="block md:hidden focus:outline-none" aria-label="Toggle menu">
+        <img src="img/menu_24dp_D4AF37_FILL0_wght400_GRAD0_opsz24.svg" alt="Menú" class="w-8 h-8" />
+      </button>
+      <ul id="menu" class="hidden md:flex space-x-6 text-lg">
+        <li><a href="index.html" class="hover-primary">Inicio</a></li>
+        <li><a href="nosotros.html" class="hover-primary font-semibold primary-color">Nosotros</a></li>
+        <li><a href="habitaciones.html" class="hover-primary">Habitaciones</a></li>
+        <li><a href="servicios.html" class="hover-primary">Servicios</a></li>
+        <li><a href="contacto.html" class="hover-primary">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="pt-20 px-4 md:px-0 max-w-screen-lg mx-auto container p-6">
+    <section>
+      <h1 class="text-4xl font-bold mb-4">Nosotros</h1>
+      <div class="flex flex-col md:flex-row items-center my-6 md:space-x-6 space-y-4 md:space-y-0 rounded-lg">
+        <img src="img/foto_nosotros_1.jpg" alt="Foto Nosotros 1" class="rounded-lg" style="width:200px; height:200px; object-fit: cover;" />
+        <p class="mb-4 flex-1">Áurea Suites nace del deseo de ofrecer un refugio sereno y sofisticado en el corazón de la ciudad. Su nombre, inspirado en la palabra latina “aurea”, que significa "dorado", evoca una experiencia brillante, cálida y memorable. Es también un homenaje al equilibrio de la media áurea, símbolo de armonía y belleza en la naturaleza y el arte, principios que guían cada detalle de nuestro diseño y servicio.</p>
+      </div>
+      <div class="flex flex-col md:flex-row-reverse items-center my-6 md:space-x-6 md:space-x-reverse space-y-4 md:space-y-0 rounded-lg">
+        <img src="img/foto_nosotros_2.jpg" alt="Foto Nosotros 2" class="rounded-lg" style="width:200px; height:200px; object-fit: cover;" />
+        <p class="mb-4 flex-1">Fundado por una familia con vocación por la hospitalidad, Áurea Suites es mucho más que un hotel: es un espacio concebido para el descanso, el buen gusto y la conexión auténtica con uno mismo y con los demás. Desde su arquitectura sobria y contemporánea hasta la calidez de cada bienvenida, todo está pensado para que nuestros huéspedes se sientan cuidados y valorados.</p>
+      </div>
+      <div class="flex flex-col md:flex-row items-center my-6 md:space-x-6 space-y-4 md:space-y-0 rounded-lg">
+        <img src="img/foto_nosotros_3.jpg" alt="Foto Nosotros 3" class="rounded-lg" style="width:200px; height:200px; object-fit: cover;" />
+        <p class="mb-4 flex-1">Nuestros valores son la excelencia sin pretensiones, la atención genuina y el compromiso con una hospitalidad sostenible. Creemos que los pequeños gestos (una sonrisa, una habitación impecable, un amanecer silencioso) pueden transformar una estadía en una experiencia imborrable.</p>
+      </div>
+      <div class="flex flex-col items-center my-6 space-y-4 md:space-y-0 rounded-lg">
+        <p class="mb-4 flex-1 italic text-center">Bienvenidos a Áurea Suites, donde el descanso tiene un brillo propio.</p>
+      </div>
+    </section>
+  </main>
+
+    <footer class="footer-background border-t mt-12">
+      <div class="container mx-auto p-4 text-center text-secondary text-sm">
+        &copy; 2025 Áurea Suites. Todos los derechos reservados.
+      </div>
+    </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    menuBtn.addEventListener('click', () => {
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        menu.classList.add('mobile-menu');
+      } else {
+        menu.classList.add('hidden');
+        menu.classList.remove('mobile-menu');
+      }
+    });
+  </script>
+
+</body>
+</html>

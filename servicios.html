@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Áurea Suites - Servicios</title>
+    <!-- CDN de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  </head>
+<body class="font-sans background-main text-primary">
+
+  <header class="background-main shadow fixed w-full z-50">
+    <nav class="container mx-auto flex justify-between items-center p-4 relative">
+      <a href="index.html" class="text-2xl font-bold primary-color">Áurea Suites</a>
+      <button id="menu-btn" class="block md:hidden focus:outline-none" aria-label="Toggle menu">
+        <img src="img/menu_24dp_D4AF37_FILL0_wght400_GRAD0_opsz24.svg" alt="Menú" class="w-8 h-8" />
+      </button>
+      <ul id="menu" class="hidden md:flex space-x-6 text-lg">
+        <li><a href="index.html" class="hover-primary">Inicio</a></li>
+        <li><a href="nosotros.html" class="hover-primary">Nosotros</a></li>
+        <li><a href="habitaciones.html" class="hover-primary">Habitaciones</a></li>
+        <li><a href="servicios.html" class="hover-primary font-semibold primary-color">Servicios</a></li>
+        <li><a href="contacto.html" class="hover-primary">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="pt-20 px-4 md:px-0 max-w-screen-lg mx-auto container p-6 flex justify-center">
+    <section>
+      <h1 class="text-4xl font-bold mb-6">Servicios</h1>
+  <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 list-disc list-inside">
+    <li class="flex items-center space-x-2"><span class="material-icons text-primary">wifi</span><span>Wi-Fi gratuito en todas las áreas</span></li>
+    <li class="flex items-center space-x-2"><span class="material-icons text-primary">free_breakfast</span><span>Desayuno buffet incluido</span></li>
+    <li class="flex items-center space-x-2"><span class="material-icons text-primary">pool</span><span>Piscina y gimnasio</span></li>
+    <li class="flex items-center space-x-2"><span class="material-icons text-primary">room_service</span><span>Servicio de habitaciones 24 horas</span></li>
+    <li class="flex items-center space-x-2"><span class="material-icons text-primary">local_parking</span><span>Estacionamiento privado</span></li>
+    <li class="flex items-center space-x-2"><span class="material-icons text-primary">support_agent</span><span>Recepción 24 horas</span></li>
+  </ul>
+  <p class="mt-6 text-lg leading-relaxed">
+    En Áurea Suites, buscamos ofrecer mucho más que una estadía confortable: nos esforzamos por crear una experiencia integral pensada para tu bienestar, comodidad y productividad.
+  </p>
+  <p class="mt-4 text-lg leading-relaxed">
+    Además de nuestro Wi-Fi gratuito en todas las áreas, el desayuno buffet incluido, el acceso a nuestra piscina y gimnasio, el servicio de habitaciones 24 horas, el estacionamiento privado y la recepción disponible las 24 horas, ponemos a tu disposición una variedad de servicios diseñados para satisfacer tanto al viajero de placer como al profesional exigente.
+  </p>
+  <p class="mt-4 text-lg leading-relaxed">
+    Disfrutá de nuestro restaurante gourmet, donde cada noche podés deleitarte con platos de autor y menús especiales para cenas íntimas, celebraciones o reuniones corporativas. Para eventos de mayor escala, ofrecemos un salón de usos múltiples con capacidad para 120 personas, ideal para conferencias, workshops, capacitaciones y eventos sociales.
+  </p>
+  <div class="flex flex-col md:flex-row md:space-x-6 mt-6 mb-6 justify-center items-center">
+    <img src="img/restaurante.jpg" alt="Restaurante Gourmet" class="w-72 h-72 object-cover rounded-lg mb-4 md:mb-0" />
+    <img src="img/salon_eventos.jpg" alt="Salón de Eventos" class="w-72 h-72 object-cover rounded-lg mb-4 md:mb-0" />
+    <img src="img/piscina.jpg" alt="Piscina" class="w-72 h-72 object-cover rounded-lg" />
+  </div>
+  <p class="mt-4 text-lg leading-relaxed">
+    Nuestro centro de negocios está equipado con salas privadas, servicio de impresión y asistencia técnica para que puedas trabajar sin interrupciones. Y si lo tuyo es el relax, podés reservar una sesión en nuestra sala de masajes y spa urbano, diseñada para desconectar del ritmo diario con tratamientos personalizados.
+  </p>
+  <div class="flex flex-col md:flex-row md:space-x-6 mt-6 mb-6 justify-center items-center">
+<img src="img/centro_negocios.jpg" alt="Centro de negocios" class="object-cover rounded-lg mb-4 md:mb-0" style="width:450px; height:300px;" />
+<img src="img/masajes.jpg" alt="Sala de masajes y SPA" class="object-cover rounded-lg" style="width:450px; height:300px;" />
+  </div>
+  <p class="mt-4 text-lg leading-relaxed">
+    Además, ofrecemos traslados privados al aeropuerto, servicio de lavandería exprés, y un servicio de concierge para ayudarte a planificar excursiones, reservas en restaurantes, o cualquier necesidad que tengas durante tu estadía.
+  </p>
+  <p class="mt-4 text-lg leading-relaxed">
+    En Áurea Suites, cada detalle está pensado para hacerte sentir cuidado, valorado y en casa.
+  </p>
+    </section>
+  </main>
+
+  <footer class="footer-background border-t mt-12">
+    <div class="container mx-auto p-4 text-center text-secondary text-sm">
+        &copy; 2025 Áurea Suites. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    menuBtn.addEventListener('click', () => {
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        menu.classList.add('mobile-menu');
+      } else {
+        menu.classList.add('hidden');
+        menu.classList.remove('mobile-menu');
+      }
+    });
+  </script>
+
+</body>
+</html>

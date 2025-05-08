@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Áurea Suites - Contacto</title>
+  <!-- CDN de Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="font-sans background-main text-primary">
+
+  <header class="background-main shadow fixed w-full z-50">
+    <nav class="container mx-auto flex justify-between items-center p-4 relative">
+      <a href="index.html" class="text-2xl font-bold primary-color">Áurea Suites</a>
+      <button id="menu-btn" class="block md:hidden focus:outline-none" aria-label="Toggle menu">
+        <img src="img/menu_24dp_D4AF37_FILL0_wght400_GRAD0_opsz24.svg" alt="Menú" class="w-8 h-8" />
+      </button>
+      <ul id="menu" class="hidden md:flex space-x-6 text-lg">
+        <li><a href="index.html" class="hover-primary">Inicio</a></li>
+        <li><a href="nosotros.html" class="hover-primary">Nosotros</a></li>
+        <li><a href="habitaciones.html" class="hover-primary">Habitaciones</a></li>
+        <li><a href="servicios.html" class="hover-primary">Servicios</a></li>
+        <li><a href="contacto.html" class="hover-primary font-semibold primary-color">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="pt-20 px-4 md:px-0 max-w-screen-xl mx-auto container p-6">
+    <section>
+      <h1 class="text-4xl font-bold mb-6">Contacto</h1>
+      <form id="contact-form" class="max-w-lg mx-auto background-main p-6 rounded shadow" action="#" method="POST" novalidate>
+        <div class="mb-4">
+          <label for="name" class="block text-primary font-semibold mb-2">Nombre</label>
+          <input type="text" id="name" name="name" placeholder="Tu nombre" required class="w-full border border-text-secondary rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" />
+          <p id="name-error" class="text-red-600 text-sm mt-1 hidden">Ingrese un nombre válido</p>
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-primary font-semibold mb-2">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="tu@email.com" required class="w-full border border-text-secondary rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" />
+          <p id="email-error" class="text-red-600 text-sm mt-1 hidden">Ingrese una dirección de correo válida</p>
+        </div>
+        <div class="mb-4">
+          <label for="message" class="block text-primary font-semibold mb-2">Mensaje</label>
+          <textarea id="message" name="message" rows="5" placeholder="Escribe tu mensaje aquí" required class="w-full border border-text-secondary rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+        </div>
+        <button type="submit" class="button-primary">Enviar</button>
+      </form>
+      <p id="confirmation-message" class="text-green-600 font-semibold mt-4 hidden">Mensaje enviado, en breve responderemos su consulta.</p>
+    </section>
+  </main>
+
+  <footer class="footer-background border-t mt-12">
+    <div class="container mx-auto p-4 text-center text-secondary text-sm">
+        &copy; 2025 Áurea Suites. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    menuBtn.addEventListener('click', () => {
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        menu.classList.add('mobile-menu');
+      } else {
+        menu.classList.add('hidden');
+        menu.classList.remove('mobile-menu');
+      }
+    });
+  </script>
+
+  <script>
+    const contactForm = document.getElementById('contact-form');
+    const confirmationMessage = document.getElementById('confirmation-message');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+
+    function validateName() {
+      const nameValue = nameInput.value.trim();
+      const nameRegex = /^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s]+$/;
+      if (!nameRegex.test(nameValue)) {
+        nameInput.classList.add('border-red-600');
+        document.getElementById('name-error').classList.remove('hidden');
+        return false;
+      } else {
+        nameInput.classList.remove('border-red-600');
+        document.getElementById('name-error').classList.add('hidden');
+        return true;
+      }
+    }
+
+    function validateEmail() {
+      const emailValue = emailInput.value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(emailValue)) {
+        emailInput.classList.add('border-red-600');
+        document.getElementById('email-error').classList.remove('hidden');
+        return false;
+      } else {
+        emailInput.classList.remove('border-red-600');
+        document.getElementById('email-error').classList.add('hidden');
+        return true;
+      }
+    }
+
+    nameInput.addEventListener('input', validateName);
+    emailInput.addEventListener('input', validateEmail);
+
+    contactForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const isNameValid = validateName();
+      const isEmailValid = validateEmail();
+
+      if (!isNameValid) {
+        nameInput.focus();
+        return;
+      }
+      if (!isEmailValid) {
+        emailInput.focus();
+        return;
+      }
+
+    // Mostrar mensaje de confirmación
+    confirmationMessage.classList.remove('hidden');
+    // Opcionalmente limpiar los campos del formulario
+    contactForm.reset();
+  });
+</script>
+
+</body>
+</html>

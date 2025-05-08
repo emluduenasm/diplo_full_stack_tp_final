@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Áurea Suites - Inicio</title>
+  <!-- CDN de Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="font-sans background-main text-primary index-page">
+
+  <header class="background-main shadow fixed w-full z-50">
+    <nav class="container mx-auto flex justify-between items-center p-4 relative">
+      <a href="index.html" class="text-2xl font-bold primary-color">Áurea Suites</a>
+      <button id="menu-btn" class="block md:hidden focus:outline-none" aria-label="Toggle menu">
+        <img src="img/menu_24dp_D4AF37_FILL0_wght400_GRAD0_opsz24.svg" alt="Menú" class="w-8 h-8" />
+      </button>
+      <ul id="menu" class="hidden md:flex space-x-6 text-lg">
+        <li><a href="index.html" class="hover-primary">Inicio</a></li>
+        <li><a href="nosotros.html" class="hover-primary">Nosotros</a></li>
+        <li><a href="habitaciones.html" class="hover-primary">Habitaciones</a></li>
+        <li><a href="servicios.html" class="hover-primary">Servicios</a></li>
+        <li><a href="contacto.html" class="hover-primary">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="pt-0 m-0">
+    <!-- Hero Section -->
+    <section class="relative w-screen overflow-hidden m-0 p-0" style="height: calc(100vh - 64px);">
+      <img src="img/background_foto_hotel.png" alt="Fondo del hotel" class="absolute inset-0 w-full h-full object-cover z-0" />
+      <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-4 z-10">
+        <h1 class="text-white text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">Bienvenido a Áurea Suites</h1>
+        <p class="text-white text-lg md:text-xl max-w-xl mb-8 drop-shadow-md">Tu lugar ideal para descansar y disfrutar de una experiencia inolvidable.</p>
+        <a href="rooms.html" class="button-primary">Reserva Ahora</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-background border-t">
+    <div class="container mx-auto p-4 text-center text-secondary text-sm">
+      &copy; 2025 Áurea Suites. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    menuBtn.addEventListener('click', () => {
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        menu.classList.add('mobile-menu');
+      } else {
+        menu.classList.add('hidden');
+        menu.classList.remove('mobile-menu');
+      }
+    });
+  </script>
+
+</body>
+</html>

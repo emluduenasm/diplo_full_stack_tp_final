@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Áurea Suites - Habitaciones</title>
+  <!-- CDN de Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="font-sans background-main text-primary rooms-page">
+
+  <header class="background-main shadow fixed w-full z-50">
+    <nav class="container mx-auto flex justify-between items-center p-4 relative">
+      <a href="index.html" class="text-2xl font-bold primary-color">Áurea Suites</a>
+      <button id="menu-btn" class="block md:hidden focus:outline-none" aria-label="Toggle menu">
+        <img src="img/menu_24dp_D4AF37_FILL0_wght400_GRAD0_opsz24.svg" alt="Menú" class="w-8 h-8" />
+      </button>
+      <ul id="menu" class="hidden md:flex space-x-6 text-lg">
+        <li><a href="index.html" class="hover-primary">Inicio</a></li>
+        <li><a href="nosotros.html" class="hover-primary">Nosotros</a></li>
+        <li><a href="habitaciones.html" class="hover-primary font-semibold primary-color">Habitaciones</a></li>
+        <li><a href="servicios.html" class="hover-primary">Servicios</a></li>
+        <li><a href="contacto.html" class="hover-primary">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="pt-20 px-4 md:px-0 max-w-screen-xl mx-auto container p-6">
+    <section>
+      <h1 class="text-4xl font-bold mb-6">Nuestras Habitaciones</h1>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <article class="background-main rounded shadow p-4">
+          <img src="img/habitacion_individual.jpg" alt="Habitación Individual" class="rounded-lg mb-4 w-full" style="height:300px; max-width:400px; object-fit: cover;" />
+          <h2 class="text-2xl font-semibold mb-2">Habitación Individual</h2>
+          <p>Confortable habitación para una persona, ideal para viajes de negocios o estancias cortas.</p>
+        </article>
+        <article class="background-main rounded shadow p-4">
+          <img src="img/habitacion_doble.jpg" alt="Habitación Doble" class="rounded-lg mb-4 w-full" style="height:300px; max-width:400px; object-fit: cover;" />
+          <h2 class="text-2xl font-semibold mb-2">Habitación Doble</h2>
+          <p>Espaciosa habitación para dos personas, perfecta para parejas o amigos.</p>
+        </article>
+        <article class="background-main rounded shadow p-4">
+          <img src="img/suite.jpg" alt="Suite" class="rounded-lg mb-4 w-full" style="height:300px; max-width:400px; object-fit: cover;" />
+          <h2 class="text-2xl font-semibold mb-2">Suite</h2>
+          <p>Habitación de lujo con sala de estar, ideal para una experiencia exclusiva.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-background border-t mt-12">
+    <div class="container mx-auto p-4 text-center text-secondary text-sm">
+      &copy; 2025 Áurea Suites. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    menuBtn.addEventListener('click', () => {
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        menu.classList.add('mobile-menu');
+      } else {
+        menu.classList.add('hidden');
+        menu.classList.remove('mobile-menu');
+      }
+    });
+  </script>
+
+</body>
+</html>
